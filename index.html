@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Employee Data Management</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="jumbotron" style="background-color:rgb(13, 18, 22); color:white;">
+                <h1 class="text-center">
+                    Employee Data Management
+                </h1>
+                <h2 class="text-center">
+                    A Comprehensive Directory of Employee Billable Hours
+                </h2>
+
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading panel-primary">
+                    Current Employees
+                </div>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Start Date</th>
+                            <th>Months Worked</th>
+                            <th>Monthly Rate</th>
+                            <th>Total Billed</th>
+                        </tr>
+                        </thead>
+                        
+                        <tbody id="t-body">
+                        </tbody>
+                    </table>
+                
+            </div>
+            
+            <div class="panel panel-primary">
+                <div class="panel-heading panel-primary">
+                     Add Employee
+                </div>
+                <div class="panel-body">
+                   
+                    <div class="form-group">
+                            <label for="usr">Employee Name:</label>
+                            <input type="text" class="form-control" id="name" placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                            <label for="usr">Role:</label>
+                            <input type="text" class="form-control" id="role" placeholder="Job Title">
+                    </div>
+                    <div class="form-group">
+                        <label for="usr">Start Date:</label>
+                        <input type="text" class="form-control" id="start-date" placeholder="YYYY-MM-DD">
+                    </div>
+                    <div class="form-group">
+                        <label for="usr">Monthly Rate:</label>
+                        <input type="text" class="form-control" id="rate" placeholder="$##.##">
+                    </div>
+                    <button type="button" class="btn btn-primary" id="submit" data-toggle="modal" data-target="#myModal">
+                        Submit
+                    </button>
+
+                     <!-- Modal -->
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+                        
+                        <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Success!</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>New Employee <span id="this-employee"></span> was added to the database.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div><!-- End Modal content-->
+                            </div>
+                        </div><!-- End Modal -->
+                </div>
+            </div>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+        <script type="text/javascript" src="https://momentjs.com/downloads/moment.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>
